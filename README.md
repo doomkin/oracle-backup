@@ -17,9 +17,18 @@ git clone https://github.com/doomkin/oracle-backup.git
 
 1. Актуализируйте файл **расписания** резервного копировани [backup_scripts/cron/**backup_cron**](backup_scripts/cron/backup_cron).
 
+> _Выполнять полный бэкап **level0** каждую неделю в полночь с пятницы на субботу, в нолночь с субботы на воскресенье копировать полный бэкап с локального диска на сетевой с удалением устаревших копий после копирования. Выполнять инкрементальный бэкап **level1** в полночь с понедельника на вторник, со вторника на среду, со среды на четверг, с четверга на пятницу с последующим копированием инкрементального бэкапа с локального диска на сетевой с удалением устаревших копий после копирования._
+
+```
+0 0 * * 6   /home/oracle/backup_scripts/level0/lev0_run.sh
+0 0 * * 2-5 /home/oracle/backup_scripts/level1/lev1_run.sh
+0 0 * * 7   /home/oracle/backup_scripts/common/copy_level0.sh
+0 4 * * 2-5 /home/oracle/backup_scripts/common/copy_level1.sh
+```
+
 > _Синтаксис [**crontab**](https://losst.ru/nastrojka-cron)._
 
-2. Зарегистрируйте расписание резервного копирования
+1. Зарегистрируйте расписание резервного копирования
 ```bash
 ./backup_scripts/cron/init_crontab.sh
 ```
