@@ -1,0 +1,4 @@
+0 0 * * 6   /home/oracle/backup_scripts/level0/lev0_run.sh
+0 0 * * 2-5 /home/oracle/backup_scripts/level1/lev1_run.sh
+0 0 * * 7   /home/oracle/backup_scripts/common/copy_level0.sh
+0 4 * * 2-5 /home/oracle/backup_scripts/common/copy_level1.sh

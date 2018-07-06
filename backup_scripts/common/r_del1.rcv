@@ -1,0 +1,8 @@
+run
+{
+crosscheck backup;
+delete expired backup;
+crosscheck archivelog all;
+delete expired archivelog all;
+DELETE NOPROMPT OBSOLETE;
+}

@@ -1,0 +1,4 @@
+@/home/oracle/backup_scripts/common/r_policy.rcv
+@/home/oracle/backup_scripts/common/r_del1.rcv
+@/home/oracle/backup_scripts/level0/lev0.rcv
+@/home/oracle/backup_scripts/common/r_del2.rcv

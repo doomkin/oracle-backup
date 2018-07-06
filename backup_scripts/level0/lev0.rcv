@@ -1,0 +1,11 @@
+CONFIGURE CONTROLFILE AUTOBACKUP FORMAT FOR DEVICE TYPE DISK TO '/oracle/backup/level0/cf_%F.bcp';
+CONFIGURE CONTROLFILE AUTOBACKUP ON;
+sql 'alter system switch logfile';
+RUN
+{
+  ALLOCATE CHANNEL dfc DEVICE TYPE DISK maxpiecesize=8G FORMAT = '/oracle/backup/level0/parus_dfiles_lev0_%U.bcp';
+  ALLOCATE CHANNEL afc DEVICE TYPE DISK maxpiecesize=8G FORMAT = '/oracle/backup/level0/parus_arclogs_lev0_%U.bcp';
+  BACKUP INCREMENTAL LEVEL = 0
+    DATABASE  CHANNEL dfc
+    archivelog all not backed up 1 times CHANNEL afc;
+}

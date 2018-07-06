@@ -1,0 +1,5 @@
+run
+{
+DELETE NOPROMPT OBSOLETE;
+delete archivelog all backed up 1 times to disk;
+}
