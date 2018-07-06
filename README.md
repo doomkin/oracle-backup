@@ -28,7 +28,7 @@ git clone https://github.com/doomkin/oracle-backup.git
 
 > _Синтаксис [**crontab**](https://losst.ru/nastrojka-cron)._
 
-1. Зарегистрируйте расписание резервного копирования
+2. Зарегистрируйте расписание резервного копирования
 ```bash
 ./backup_scripts/cron/init_crontab.sh
 ```
