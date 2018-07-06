@@ -15,11 +15,11 @@ git clone https://github.com/doomkin/oracle-backup.git
 
 ## Установка
 
-1. Актуализируйте файл **расписания** заданий [backup_scripts/cron/**backup_cron**](backup_scripts/cron/backup_cron).
+1. Актуализируйте файл **расписания** резервного копировани [backup_scripts/cron/**backup_cron**](backup_scripts/cron/backup_cron).
 
 > _Синтаксис [**crontab**](https://losst.ru/nastrojka-cron)._
 
-2. Зарегистрируйте расписание заданий
+2. Зарегистрируйте расписание резервного копирования
 ```bash
 ./backup_scripts/cron/init_crontab.sh
 ```
